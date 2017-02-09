@@ -5,6 +5,7 @@ import play.mvc.*;
 import play.db.jpa.*;
 import views.html.*;
 import models.Person;
+import models.User;
 import play.data.Form;
 import java.util.List;
 
@@ -25,9 +26,9 @@ public class Application extends Controller {
     }
 
     @Transactional(readOnly = true)
-    public Result getPersons() {
+    public Result getUsers() {
         @SuppressWarnings("unchecked")
-		List<Person> persons = (List<Person>) JPA.em().createQuery("select p from Person p").getResultList();
-        return ok(toJson(persons));
+		List<User> users = (List<User>) JPA.em().createQuery("select * from User").getResultList();
+        return ok(toJson(users));
     }
 }

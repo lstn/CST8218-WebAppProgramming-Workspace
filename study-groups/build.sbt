@@ -16,9 +16,11 @@ libraryDependencies ++= Seq(
   cache,
   evolutions,
   "mysql" % "mysql-connector-java" % "5.1.36",
-  "org.hibernate" % "hibernate-entitymanager" % "4.3.7.Final",
+  "org.hibernate" % "hibernate-entitymanager" % "4.2.8.Final",
   "org.mindrot" % "jbcrypt" % "0.3m"
 )     
+
+PlayKeys.externalizeResources := false
 
 // Compile the project before generating Eclipse files, so that generated .scala or .class files for views and routes are present
 EclipseKeys.preTasks := Seq(compile in Compile)

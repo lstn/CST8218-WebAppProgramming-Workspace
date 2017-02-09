@@ -6,11 +6,11 @@ import org.mindrot.jbcrypt.*;
 import com.avaje.ebean.Model;
 
 @Entity
+@Table(name="User", schema="playdb")
 public class User extends Model {
 	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-	public String id;
+	public int id;
 
     @Length(min = 3, max = 16)
     public String userName;
